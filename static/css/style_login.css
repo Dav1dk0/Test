@@ -1,0 +1,48 @@
+body {
+   background-color: #f1f1f1;
+}
+
+h2 {
+   font-size: 24px;
+   text-align: center;
+}
+
+form {
+   width: 50%;
+   margin: 0 auto;
+   border: 1px solid #ccc;
+   padding: 20px;
+   background-color: #fff;
+}
+
+label {
+   display: block;
+   font-size: 16px;
+   margin-bottom: 10px;
+}
+
+input[type=text], input[type=password] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+}
+
+input[type=submit] {
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+}
+
+a {
+   display: block;
+   text-align: center;
+   margin-top: 10px;
+   margin-left: 20px;
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="static/css/style_profile.css">
+</head>
+<body>
+<div class="header">
+  <a href="{{ url_for('create_post') }}">Create Post</a>
+  <a href="{{ url_for('profile') }}">Profile</a>
+  <a href="{{ url_for('view_posts') }}">View Posts</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+    <h1>Your profile</h1>
+<div class="container">
+  <div class="table-container">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{ fullname }}</td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td>{{ username }}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{ email }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<h2>Your Posts</h2>
+  {% if posts %}
+    <ul class="post-list">
+      {% for post in posts|reverse %}
+        <li class="post-item">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p>{{ post.content }}</p>
+          <p>Posted by {{ post.author }}</p>
+          <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+          <button type="submit">Delete</button>
+          <a class="edit" href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="no-posts">No posts yet.</p>
+  {% endif %}
+</body>
+</html>
