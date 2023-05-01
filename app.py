@@ -6,8 +6,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = 'my-secret-key'
- #Hi
-
+#Hi
+#Hello
 DB_HOST = '127.0.0.1'
 DB_NAME = 'postgres'
 DB_USER = 'postgres'
